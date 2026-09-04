@@ -3,6 +3,9 @@ package br.edu.fatecfranca.api.entities;
 
 import java.time.LocalDate;
 
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,7 +18,6 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "customers")
 public class Customer {
-
 
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -53,10 +55,9 @@ public class Customer {
    @Column(nullable = false)
    private String municipality;
 
-
-   @Column(nullable = false)
+   @JdbcTypeCode(SqlTypes.CHAR)
+   @Column(nullable = false, length = 2, columnDefinition = "CHAR(2)")
    private String state;
-
 
    @Column(nullable = false)
    private String phone;
@@ -64,7 +65,6 @@ public class Customer {
 
    @Column(nullable = false, unique = true)
    private String email;
-
 
    public Customer() {
    }
