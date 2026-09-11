@@ -1,11 +1,9 @@
 package br.edu.fatecfranca.api.entities;
 
-
 import java.time.LocalDate;
 
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
-
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,7 +11,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-
 
 @Entity
 @Table(name = "customers")
@@ -23,34 +20,26 @@ public class Customer {
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
 
-
    @Column(nullable = false)
    private String name;
-
 
    @Column(name = "ident_document", nullable = false, unique = true)
    private String identDocument;
 
-
    @Column(name = "birth_date")
    private LocalDate birthDate;
-
 
    @Column(name = "street_name", nullable = false)
    private String streetName;
 
-
    @Column(name = "house_number", nullable = false)
    private String houseNumber;
-
 
    @Column(nullable = true)
    private String complements;
 
-
    @Column(nullable = false)
    private String district;
-
 
    @Column(nullable = false)
    private String municipality;
@@ -61,7 +50,6 @@ public class Customer {
 
    @Column(nullable = false)
    private String phone;
-
 
    @Column(nullable = false, unique = true)
    private String email;
