@@ -7,4 +7,3 @@ import br.edu.fatecfranca.api.entities.Customer;
 public interface CustomerRepository
        extends JpaRepository<Customer, Long> {
 }
-
